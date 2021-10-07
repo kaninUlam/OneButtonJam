@@ -11,7 +11,6 @@ public class LevelGenerator : MonoBehaviour
 
     private Vector3 lastEndPosition;
 
-    private float secondsToDestroy = 20f;
 
     private void Awake()
     {
