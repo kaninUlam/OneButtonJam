@@ -5,7 +5,8 @@ using UnityEngine;
 public class charactermovement : MonoBehaviour
 {
     public float speed = 0.1f;
-    public float jumpheight = 10;
+
+    
     Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
@@ -18,5 +19,4 @@ public class charactermovement : MonoBehaviour
     {
         transform.position = transform.position + new Vector3(10 * Time.deltaTime * speed, 0, 0);
     }
-    
 }
