@@ -14,6 +14,6 @@ public class cameraMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = transform.position + new Vector3(10 * Time.deltaTime * speed, 0, 0);
+        transform.position = transform.position + new Vector3(10 * Time.deltaTime * speed, 0, 0); // moves character from left to right
     }
 }
