@@ -15,7 +15,7 @@ public class GameOver : MonoBehaviour
 
     public void RestartButton()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("jumpPlatformer");
     }
 
     public void MenuButton()
