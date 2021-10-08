@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class characterStats : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class characterStats : MonoBehaviour
         if(isalive == false)// checks if the character is dead. disables its movement
         {
             GetComponent<charactermovement>().enabled = false;
+            SceneManager.LoadScene("Restart");
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)

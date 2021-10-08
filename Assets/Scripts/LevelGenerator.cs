@@ -38,9 +38,9 @@ public class LevelGenerator : MonoBehaviour
     {
         Transform chosenPlatform = PlatformList[Random.Range(0, PlatformList.Count)];
         Transform lastLevelPartTransform = SpawnLevelPart(chosenPlatform, lastEndPosition);
-        PlatformSeries.Enqueue(lastLevelPartTransform.gameObject); 
+        PlatformSeries.Enqueue(lastLevelPartTransform.gameObject);
         lastEndPosition = lastLevelPartTransform.Find("EndPosition").position;
-        Destroy(lastLevelPartTransform);
+       /* Destroy(lastLevelPartTransform);*/
     }
 
     private Transform SpawnLevelPart(Transform levelPart, Vector3 spawnPosition)
