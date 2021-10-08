@@ -19,4 +19,8 @@ public class dartLogic : MonoBehaviour
             dartprojectile.GetComponent<Rigidbody2D>().velocity = transform.position * new Vector2(10 * Time.deltaTime * projectilespeed, 0) ;
         }
     }
+    private void OnBecameInvisible()
+    {
+        Destroy(dartprojectile);
+    }
 }
