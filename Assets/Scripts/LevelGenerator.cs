@@ -5,9 +5,10 @@ using UnityEngine;
 public class LevelGenerator : MonoBehaviour
 {
     private const float PLAYER_DISANCE_SPAWN_PLATORM = 15f;
-    [SerializeField] private Transform levelPart_Start;
-    [SerializeField] private List<Transform> PlatformList;
-    [SerializeField] private Transform player;
+    [SerializeField] private Transform levelPart_Start = null;
+    [SerializeField] private List<Transform> PlatformList = new List<Transform>();
+    [SerializeField] private Transform player = null;
+    private Queue<GameObject> PlatformSeries = new Queue<GameObject>();
 
     private Vector3 lastEndPosition;
 
@@ -32,11 +33,14 @@ public class LevelGenerator : MonoBehaviour
         }
     }
 
+    //Choosing Level To Spawn in
     private void SpawnLevelPart()
     {
         Transform chosenPlatform = PlatformList[Random.Range(0, PlatformList.Count)];
         Transform lastLevelPartTransform = SpawnLevelPart(chosenPlatform, lastEndPosition);
+        PlatformSeries.Enqueue(lastLevelPartTransform.gameObject); 
         lastEndPosition = lastLevelPartTransform.Find("EndPosition").position;
+        Destroy(lastLevelPartTransform);
     }
 
     private Transform SpawnLevelPart(Transform levelPart, Vector3 spawnPosition)
